@@ -1,9 +1,10 @@
 var express = require('express');
 var crypto = require('crypto');
 var moment = require('moment')
+var request = require('request')
 
 const PORT=8080;
-const API_SECRET = "[YOUR_API_KEY]";
+const API_SECRET = "[YOUR_SECRET_API_KEY]";
 
 var app = express();
 
@@ -32,19 +33,29 @@ app.get("/token", function(req, res) {
     var currentTime = moment().format('x');
 
     var clientIp = req.connection.remoteAddress;
-    
     //if behind proxy
     //var clientIp = request.headers['x-forwarded-for']
 
-    var token = generateToken(clientIp, currentTime);
+    if (clientIp === '::1' || clientIp === '127.0.0.1') {
+        request.get({url: 'http://ipinfo.io', 'json': true }, function(err, response, data) {
 
-    console.log('clientIp: ' + clientIp);
-    console.log('token:' + token)
-    console.log('timestamp: ' + currentTime)
+            if (err) {
+                console.log(err)
+                return res.send('error getting your external ip, try not to run local.') 
+            }
 
-    res.setHeader('Content-Type', 'application/json');
-    res.send({'timestamp': currentTime, 'token': token});
+            clientIp = data.ip
 
+            var token = generateToken(clientIp, currentTime);
+
+            console.log('clientIp: ' + clientIp);
+            console.log('token:' + token)
+            console.log('timestamp: ' + currentTime)
+
+            res.setHeader('Content-Type', 'application/json');
+            res.send({'timestamp': currentTime, 'token': token});
+        });
+    }
 });    
 
 app.listen(PORT, function () {
