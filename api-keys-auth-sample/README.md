@@ -1,6 +1,6 @@
 ### Example of Angular Application making Livestream Rest API calls
 
-![ClientToServerArchitecture](clientToServer.png)
+![Flow](flow.png)
 
 ### Prerequisite
 - Install `node`
