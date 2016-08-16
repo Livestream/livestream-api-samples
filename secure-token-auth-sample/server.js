@@ -2,7 +2,7 @@ var express = require('express');
 var request = require('request');
 
 const PORT=8080;
-const API_SECRET = [YOUR_API_KEY]";
+const API_SECRET = "[YOUR_API_KEY]";
 
 var app = express();
 

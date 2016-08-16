@@ -5,7 +5,7 @@
 
 ### Run your server & client app on same port
 
-1. `cd server-to-server-sample/`
+1. `cd secure-token-auth-sample/`
 2. edit `[YOUR_API_KEY]` with your secret key in `server.js`
 2. run `npm install`
 3. start server `node server.js`
