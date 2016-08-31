@@ -1,7 +1,5 @@
 angular.module('sampleApp', [])
-    .directive('accounts', ['LsService', 'TokenService', function(lsService, tokenService){
-
-        var CLIENT_ID = [YOUR_CLIENT_ID];
+    .directive('accounts', ['DataService', function(dataService){
 
         return {
             restrict: 'E', 
@@ -10,24 +8,12 @@ angular.module('sampleApp', [])
                 $scope.accounts = {}
 
                 //Call to your server
-                tokenService.getToken({
+                dataService.getAccounts({
                     success: function(data, status, headers, config) {
                         console.log(status)
-
-                        //Call to livestream api server
-                        lsService.getAccounts(data.token, CLIENT_ID, data.timestamp, {
-                            success: function(data, status, headers, config) {
-                                console.log(status)
-
-                                $scope.accounts = data;
-
-                            },
-                            error: function(data, status, headers, config) {
-                                console.log(status)
-                            }
-                        })
-
+                        $scope.accounts = data;
                     },
+                    
                     error: function (data, status, headers, config) {
                         console.log(status)
                     }

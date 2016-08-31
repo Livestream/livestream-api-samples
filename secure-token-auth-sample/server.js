@@ -1,8 +1,9 @@
 var express = require('express');
-var request = require('request');
+var crypto = require('crypto');
+var moment = require('moment');
 
 const PORT=8080;
-const API_SECRET = "[YOUR_API_KEY]";
+const API_SECRET = "[YOUR_SECRET_API_KEY]";
 
 var app = express();
 
@@ -17,28 +18,29 @@ app.use(function (req, res, next) {
 
 app.use(express.static('client_application'));
 
+function generateToken(scope, timestamp) {
+    var hmac = crypto.createHmac("md5", API_SECRET);
+    
+    var tokenString = API_SECRET + ":" + scope + ":" + timestamp
+    hmac.update(tokenString);
+    var crypted = hmac.digest("hex");
 
+    return crypted;
+};
 
-app.get("/accounts", function(req, res) {
+app.get("/token", function(req, res) {
+    var currentTime = moment().format('x');
 
-    var options = {
-        url: 'https://livestreamapis.com/v1/accounts',
-        auth: {
-            username: API_SECRET
-        }
-    }
+    var SCOPE = 'readonly';
+    
+    var token = generateToken(SCOPE, currentTime);
 
-    request.get(options, function(err, response, body) {
-        if (err) {
-            console.error('livestream api call failed ', err)
-            return res.send(err)
-        }   
+    console.log('scope:' + SCOPE);
+    console.log('token:' + token);
+    console.log('timestamp: ' + currentTime);
 
-        console.log('data received ' + body);
-        res.setHeader('Content-Type', 'application/json');
-        res.send(body)
-    })
-
+    res.setHeader('Content-Type', 'application/json');
+    res.send({'timestamp': currentTime, 'token': token});
 });    
 
 app.listen(PORT, function () {
