@@ -3,7 +3,7 @@ var crypto = require('crypto');
 var moment = require('moment');
 
 const PORT=8080;
-const API_SECRET = "[YOUR_SECRET_API_KEY]";
+const API_SECRET = "qx6IVSoFi5pZEFCaOhHLsWalCyOP2gb0";
 
 var app = express();
 
