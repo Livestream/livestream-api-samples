@@ -1,4 +1,4 @@
-package com.livestream.api.samples.server.model;
+package com.livestream.api.samples.apikeys.server.model;
 
 import com.fasterxml.jackson.annotation.*;
 

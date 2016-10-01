@@ -1,4 +1,4 @@
-package com.livestream.api.samples.server.endpoint;
+package com.livestream.api.samples.apikeys.server.endpoint;
 
 import java.io.IOException;
 
@@ -7,7 +7,7 @@ import javax.ws.rs.core.*;
 
 import org.apache.http.client.*;
 
-import com.livestream.api.samples.server.LivestreamApiService;
+import com.livestream.api.samples.apikeys.server.LivestreamApiService;
 
 @Path("")
 public class AccountApi {
@@ -16,7 +16,7 @@ public class AccountApi {
     @GET
     public Response getAccounts() throws ClientProtocolException, IOException {
         try {
-            Response.ok(LivestreamApiService.getAccounts(), MediaType.APPLICATION_JSON_TYPE).build();
+            return Response.ok(LivestreamApiService.getAccounts(), MediaType.APPLICATION_JSON_TYPE).build();
         } catch (Exception e) {
             e.printStackTrace();
         }

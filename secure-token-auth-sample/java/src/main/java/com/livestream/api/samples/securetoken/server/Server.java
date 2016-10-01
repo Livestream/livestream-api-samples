@@ -1,4 +1,4 @@
-package com.livestream.api.samples.server;
+package com.livestream.api.samples.securetoken.server;
 
 import java.io.IOException;
 import java.net.URI;
@@ -12,7 +12,7 @@ public class Server {
     public void start() {
         URI baseUri = UriBuilder.fromUri("http://localhost/").port(9998).build();
         ResourceConfig config = new ResourceConfig();
-        config.packages("com.livestream.api.samples.server");
+        config.packages("com.livestream.api.samples.securetoken.server");
         JdkHttpServerFactory.createHttpServer(baseUri, config);
     }
     

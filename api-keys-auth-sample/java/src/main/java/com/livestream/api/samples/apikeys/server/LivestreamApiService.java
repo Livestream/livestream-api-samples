@@ -1,4 +1,4 @@
-package com.livestream.api.samples.server;
+package com.livestream.api.samples.apikeys.server;
 
 import java.io.IOException;
 import java.util.List;
@@ -13,7 +13,7 @@ import org.glassfish.jersey.internal.util.Base64;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.*;
-import com.livestream.api.samples.server.model.Account;
+import com.livestream.api.samples.apikeys.server.model.Account;
 
 public class LivestreamApiService {
 

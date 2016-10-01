@@ -11,4 +11,4 @@
 3. start server `node server.js`
 4. Open `http://localhost:8080/index.html` and you should see your account data. 
 
-For more information please visit the documentation - https://livestreamapis.com/docs
+For more information please visit the documentation - https://livestream.com/developers/docs/api
