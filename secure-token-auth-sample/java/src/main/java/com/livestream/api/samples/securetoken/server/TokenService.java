@@ -8,7 +8,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 import org.apache.commons.codec.binary.Hex;
 
-import com.livestream.api.samples.securetoken.server.model.Token;
+import com.livestream.api.samples.securetoken.model.Token;
 
 public class TokenService {
 

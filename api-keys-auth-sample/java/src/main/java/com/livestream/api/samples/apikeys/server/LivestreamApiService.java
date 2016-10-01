@@ -17,11 +17,11 @@ import com.livestream.api.samples.apikeys.server.model.Account;
 
 public class LivestreamApiService {
 
-    private static final String LS_API_KEY = "[YOUR_API_KEY]";
+    private static final String API_SECRET = "[YOUR_API_KEY]";
     private static final String LS_API_HOST = "https://livestreamapis.com/v1";
     private static final String GET_ACCOUNTS_URL = LS_API_HOST + "/accounts";
     private static final Header AUTHORIZATION = new BasicHeader("Authorization",
-            Base64.encodeAsString(LS_API_KEY));
+            Base64.encodeAsString(API_SECRET));
 
     private static final HttpClient client = HttpClientBuilder.create().build();
 
