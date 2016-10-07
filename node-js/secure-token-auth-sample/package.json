@@ -1,0 +1,12 @@
+{
+  "name": "SampleApp",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "repository": "git@github.com/Livestream/livestream-api-samples",
+  "devDependencies": {
+    "crypto": "^0.0.3",
+    "express": "^4.14.0",
+    "moment": "^2.14.1"
+  }
+}
