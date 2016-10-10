@@ -6,7 +6,7 @@ import requests
 import hmac
 import time
 
-api_key='rYYkIgdqWJMVuts3n4PlmikSjoxAEHPO'
+api_key='[YOUR_API_KEY]'
 client_id='76'
 scope='readonly'
 separator=':'
