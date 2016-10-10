@@ -2,7 +2,7 @@ from flask import Flask, session, render_template, request
 import urllib2, base64,json
 app = Flask(__name__)
 
-api_key='[YOUR API KEY]'
+api_key='[YOUR_API_KEY]'
 
 @app.route("/")
 def account():
