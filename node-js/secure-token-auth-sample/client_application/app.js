@@ -1,7 +1,7 @@
 angular.module('sampleApp', [])
     .directive('accounts', ['LsService', 'TokenService', function(lsService, tokenService){
 
-        var CLIENT_ID = 148;
+        var CLIENT_ID = 76;
 
         return {
             restrict: 'E', 
