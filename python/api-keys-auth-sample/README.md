@@ -1,7 +1,7 @@
 ### Prerequisite
 - Install dependencies 
   - cd `secure-token-auth-sample`
-  - `pip install -r requirements.txt`
+  - `sudo pip install -r requirements.txt`
 
 ### Run your server
 
