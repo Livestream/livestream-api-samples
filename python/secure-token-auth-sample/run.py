@@ -7,7 +7,7 @@ import hmac
 import time
 
 api_key='[YOUR_API_KEY]'
-client_id='76'
+client_id='[YOUR_CLIENT_ID]'
 scope='readonly'
 separator=':'
 
