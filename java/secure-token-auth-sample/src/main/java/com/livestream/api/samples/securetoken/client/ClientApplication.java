@@ -1,6 +1,7 @@
 package com.livestream.api.samples.securetoken.client;
 
 import static com.livestream.api.samples.securetoken.Constants.CLIENT_ID;
+import static com.livestream.api.samples.securetoken.Constants.SCOPE;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -30,7 +31,7 @@ public class ClientApplication {
         WebTarget target = client.target(TOKENS_URL);
         Form form = new Form();
         form.param("ts", "" + System.currentTimeMillis());
-        form.param("scope", "readonly");
+        form.param("scope", SCOPE);
         return target.request().post(
                 Entity.entity(form, MediaType.APPLICATION_FORM_URLENCODED_TYPE), Token.class);
     }
