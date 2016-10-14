@@ -9,8 +9,15 @@ import org.glassfish.jersey.jdkhttp.JdkHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
 
 public class Server {
+    private static final String HOST = "localhost";
+    private static final int PORT = 9998;
+    
+    public static String getServerAddress() {
+        return "http://" + HOST + ":" + PORT;
+    }
+    
     public void start() {
-        URI baseUri = UriBuilder.fromUri("http://localhost/").port(9998).build();
+        URI baseUri = UriBuilder.fromUri(getServerAddress() + "/").build();
         ResourceConfig config = new ResourceConfig();
         config.packages("com.livestream.api.samples.apikeys.server");
         JdkHttpServerFactory.createHttpServer(baseUri, config);
@@ -18,6 +25,6 @@ public class Server {
     
     public static void main(String[] args) throws IOException {
         new Server().start();
-        System.out.println("server started");
+        System.out.println("server started @ " + getServerAddress());
     }
 }

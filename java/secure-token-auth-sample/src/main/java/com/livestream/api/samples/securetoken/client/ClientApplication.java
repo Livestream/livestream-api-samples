@@ -13,18 +13,20 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
 
 import com.livestream.api.samples.securetoken.model.Token;
+import com.livestream.api.samples.securetoken.server.Server;
 
 public class ClientApplication {
 
     private static final String CLIENT_ID = "[YOUR_CLIENT_ID]";
     private static final String LS_API_HOST = "https://livestreamapis.com/v1";
+    private static final String TOKENS_URL = Server.getServerAddress() + "/tokens";
     private static final String GET_ACCOUNTS_URL = LS_API_HOST
             + "/accounts?token=%s&timestamp=%d&client_id=%s";
     private static final HttpClient client = HttpClientBuilder.create().build();
 
     public Token getTokenFromServer() {
         Client client = ClientBuilder.newClient();
-        WebTarget target = client.target("http://localhost:9998/tokens");
+        WebTarget target = client.target(TOKENS_URL);
         Form form = new Form();
         form.param("ts", "" + System.currentTimeMillis());
         form.param("scope", "readonly");

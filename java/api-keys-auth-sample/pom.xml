@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.livestream.api.samples</groupId>
-    <artifactId>auth.apikeys.java</artifactId>
+    <artifactId>api-keys-auth-sample</artifactId>
     <version>1.0.0</version>
     <name>Livestream Public API Samples</name>
     <inceptionYear>2016</inceptionYear>
@@ -38,6 +38,11 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.5.2</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.5</version>
         </dependency>
     </dependencies>
 </project>

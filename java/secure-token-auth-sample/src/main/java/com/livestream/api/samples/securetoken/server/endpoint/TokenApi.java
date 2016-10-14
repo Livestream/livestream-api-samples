@@ -15,10 +15,7 @@ public class TokenApi {
     @Path("/tokens")
     @POST
     public Response generateToken(@FormParam("scope") String scope, @FormParam("ts") long timestamp) throws ClientProtocolException, IOException {
-        // validate parameters first before proceeding
         try {
-            System.out.println(scope);
-            System.out.println(timestamp);
             return Response.ok(TokenService.generateToken(scope, timestamp), MediaType.APPLICATION_JSON_TYPE).build();
         } catch (Exception e) {
             e.printStackTrace();
