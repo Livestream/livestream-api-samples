@@ -3,7 +3,8 @@
 ![Flow](flow.png)
 
 ### Prerequisite
-- Install dependencies with pip install -r /path/to/requirements.txt
+- cd 'secure-token-auth-sample'
+- Install dependencies with 'sudo pip install -r /path/to/requirements.txt'
 
 ### Run your server
 
