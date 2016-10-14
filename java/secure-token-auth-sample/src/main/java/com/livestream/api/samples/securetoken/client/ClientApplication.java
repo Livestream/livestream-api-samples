@@ -50,7 +50,7 @@ public class ClientApplication {
             System.out.println("Got token from server => " + token);
             System.out.println("Fetching accounts using secure token");
             String jsonResponse = clientApplication.getAccountsJson(token);
-            System.out.println("Got accounts response from Livestream Public API server => "
+            System.out.println("Got accounts response from Livestream API server => "
                     + jsonResponse);
         } catch (Exception e) {
             e.printStackTrace();

@@ -26,7 +26,7 @@ public class ClientApplication {
         ClientApplication clientApplication = new ClientApplication();
         try {
             String jsonResponse = clientApplication.getAccountsJson();
-            System.out.println("Got accounts response from Livestream Public API server => "
+            System.out.println("Got accounts response from Livestream API server => "
                     + jsonResponse);
         } catch (Exception e) {
             e.printStackTrace();

@@ -4,3 +4,4 @@ npm-debug.log
 .project
 bin/
 target/
+**/target
