@@ -1,5 +1,7 @@
 package com.livestream.api.samples.securetoken.client;
 
+import static com.livestream.api.samples.securetoken.Constants.CLIENT_ID;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
@@ -17,7 +19,6 @@ import com.livestream.api.samples.securetoken.server.Server;
 
 public class ClientApplication {
 
-    private static final String CLIENT_ID = "[YOUR_CLIENT_ID]";
     private static final String LS_API_HOST = "https://livestreamapis.com/v1";
     private static final String TOKENS_URL = Server.getServerAddress() + "/tokens";
     private static final String GET_ACCOUNTS_URL = LS_API_HOST

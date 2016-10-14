@@ -1,5 +1,7 @@
 package com.livestream.api.samples.apikeys.server;
 
+import static com.livestream.api.samples.apikeys.Constants.API_SECRET;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -17,7 +19,6 @@ import com.livestream.api.samples.apikeys.server.model.Account;
 
 public class LivestreamApiService {
 
-    private static final String API_SECRET = "[YOUR_API_KEY]";
     private static final String LS_API_HOST = "https://livestreamapis.com/v1";
     private static final String GET_ACCOUNTS_URL = LS_API_HOST + "/accounts";
     private static final Header AUTHORIZATION = new BasicHeader("Authorization",

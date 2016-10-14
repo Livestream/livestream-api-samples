@@ -1,5 +1,7 @@
 package com.livestream.api.samples.securetoken.server;
 
+import static com.livestream.api.samples.securetoken.Constants.API_SECRET;
+
 import java.io.UnsupportedEncodingException;
 import java.security.*;
 
@@ -12,7 +14,6 @@ import com.livestream.api.samples.securetoken.model.Token;
 
 public class TokenService {
 
-    private static final String API_SECRET = "[YOUR_SECRET_API_KEY]";
     private static final String SEPARATOR = ":";
     private static final String HMAC_MD5_ALGO = "HmacMD5";
     private static final String CHARSET = "UTF-8";
