@@ -6,7 +6,7 @@ $scope = '[SCOPE]';
 $separator = ':';
 $timestamp = time();
 
-$token=hash_hmac("md5", $api_key . $scope . $timestamp , $api_key);
+$token=hash_hmac("md5", $api_key . $separator . $scope . $separator. $timestamp , $api_key);
 
 $method = $_SERVER['REQUEST_METHOD'];
 $path = $_SERVER['REQUEST_URI'];
