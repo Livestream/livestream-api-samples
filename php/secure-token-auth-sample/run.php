@@ -4,7 +4,7 @@ $api_key = '[YOUR_API_KEY]';
 $client_id = [YOUR_CLIENT_ID];
 $scope = '[SCOPE]';
 $separator = ':';
-$timestamp = time();
+$timestamp = round(microtime(true) * 1000);
 
 $token=hash_hmac("md5", $api_key . $separator . $scope . $separator. $timestamp , $api_key);
 
