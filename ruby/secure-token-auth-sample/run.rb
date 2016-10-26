@@ -17,7 +17,6 @@ class MyServlet < WEBrick::HTTPServlet::AbstractServlet
         token = OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('MD5'), apiKey, data)
         response['Content-Type'] = 'application/json'
         response.body = JSON.generate({:token => "#{token}", :timestamp => timestamp, :client_id => clientId})
-        response['Content-Type'] = 'application/json'
     end
 end
 
