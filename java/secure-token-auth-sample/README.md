@@ -4,7 +4,7 @@
 
 ### Prerequisite
 
-You need to have java 1.7 and maven 3.3.9 installed on your system and PATH varibale must be set accordingly.
+You need to have java 1.7 and maven 3.3.9 installed on your system and PATH variable must be set accordingly.
 
 ### Run your server
 
