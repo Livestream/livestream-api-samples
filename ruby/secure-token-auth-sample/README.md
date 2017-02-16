@@ -4,7 +4,7 @@
 
 ### Prerequisite
 
-You need to have ruby2.0.0p648 on your system and PATH varibale must be set accordingly.
+You need to have ruby2.0.0p648 on your system and PATH variable must be set accordingly.
 
 ### Run your server
 
